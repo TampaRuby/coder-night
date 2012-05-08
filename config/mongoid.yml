@@ -13,4 +13,4 @@ test:
   database: coder_night_test
 
 production:
-  <<: *common
+  uri: <%= ENV['MONGOHQ_URL'] %>
