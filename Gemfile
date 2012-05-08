@@ -19,9 +19,6 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
-
-  # CSS framework
-  gem 'twitter-bootstrap-rails'
 end
 
 group :development do
