@@ -11,14 +11,3 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require underscore
-//= require backbone
-//= require skim
-//
-//= require ./coder_night
-//
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers

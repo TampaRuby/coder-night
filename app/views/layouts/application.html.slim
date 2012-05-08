@@ -1,0 +1,32 @@
+doctype
+html
+  head
+    title Coder Night
+    /![if lt IE 9]
+      | <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.brand href="#{root_path}" Coder Night
+          .nav-collapse
+            ul.nav
+              / li.active= link_to "Events"
+              / li= link_to "About"
+    .container
+      = yield
+      hr
+      footer
+        #session
+          - if current_user
+            = link_to "Sign out as #{current_user.full_name}", sign_out_path
+          - else
+            = link_to "Sign in with Twitter", "/auth/twitter", id: 'sign-in-with-twitter'
+
+    #fork-me-on-github
+      a href="https://github.com/TampaRuby/coder-night"
+        img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"

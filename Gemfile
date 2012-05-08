@@ -5,14 +5,9 @@ gem 'rails', '~> 3.2'
 # Authentication & Authorization
 gem 'omniauth-twitter'
 
-# Client-side JavaScript framworks
-gem 'jquery-rails'
-gem 'backbone-on-rails'
-
-# View templates
-gem 'skim' # SLIM for client-side JS templates
+# Views & client-side js
 gem 'slim'
-gem 'rabl'
+gem 'jquery-rails'
 
 # File attachments
 gem 'paperclip'
