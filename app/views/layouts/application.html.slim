@@ -22,10 +22,11 @@ html
       hr
       footer
         #session
-          - if current_user
-            = link_to "Sign out as #{current_user.full_name}", sign_out_path
-          - else
-            = link_to "Sign in with Twitter", "/auth/twitter", id: 'sign-in-with-twitter'
+          - if signed_in?
+            | You are signed in as
+            | &nbsp;
+            strong= current_user.full_name
+            | . #{link_to "Sign out", sign_out_path}.
 
     #fork-me-on-github
       a href="https://github.com/TampaRuby/coder-night"
