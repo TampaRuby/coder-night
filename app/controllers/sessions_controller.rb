@@ -1,7 +1,16 @@
 class SessionsController < ApplicationController
-  def callback
-    auth # Do what you want with the auth hash!
+
+  def create
+    session[:user_id] = User.with_omniauth(auth).id
+    redirect_to :root
   end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to :root
+  end
+
+  private
 
   def auth; request.env['omniauth.auth'] end
 end

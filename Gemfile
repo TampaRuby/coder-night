@@ -1,45 +1,37 @@
-source 'https://rubygems.org'
+source :rubygems
 
-gem 'rails', '3.2.3'
+gem 'rails', '~> 3.2'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Object Document Mapper
+gem 'mongoid'
 
+# Authentication & Authorization
+gem 'omniauth-twitter'
 
+# Client-side JavaScript framworks
+gem 'jquery-rails'
+gem 'backbone-on-rails'
 
-# Gems used only for assets and not required
-# in production environments by default.
+# View templates
+gem 'slim'
+
+# Application server
+gem 'thin'
+
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+  # SLIM for client-side JS templates
+  gem 'skim'
 end
 
+group :development do
+  gem 'heroku'
+end
 
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-gem "jquery-rails"
-gem "bson_ext"
-gem "mongoid", ">= 2.0.0.beta.19"
-gem "omniauth", "~> 0.2.0"
-gem "haml", ">= 3.0.0"
-gem "slim"
-gem "slim-rails"
+group :production do
+  # C extensions for the MongoDB Ruby driver
+  gem 'bson_ext'
+end
