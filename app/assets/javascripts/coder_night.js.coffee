@@ -3,7 +3,7 @@ window.CoderNight =
   Collections: {}
   Views: {}
   Routers: {}
-  init: -> alert 'Hello from Backbone!'
+  init: -> console.log 'Hello from Backbone!'
 
 $(document).ready ->
   CoderNight.init()
