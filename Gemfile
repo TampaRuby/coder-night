@@ -6,8 +6,9 @@ gem 'rails', '~> 3.2'
 gem 'omniauth-twitter'
 
 # Views & client-side js
-gem 'slim'
+gem 'slim-rails'
 gem 'jquery-rails'
+gem 'simple_form'
 
 # File attachments
 gem 'paperclip'

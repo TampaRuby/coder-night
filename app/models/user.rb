@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :submissions
   has_many :events, through: :submissions
 
+  attr_accessible :full_name, :twitter_handle
+
   def self.with_omniauth(auth)
     user = where(oauth_provider: auth['provider'],
                       oauth_uid: auth['uid']).first

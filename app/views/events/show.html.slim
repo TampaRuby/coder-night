@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @event.title
+p
+  strong Description:
+  = @event.description
+p
+  strong Scheduled at:
+  = @event.scheduled_at
+p
+  strong Finalized at:
+  = @event.finalized_at
+
+= link_to 'Edit', edit_event_path(@event)
+'|
+= link_to 'Back', events_path

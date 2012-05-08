@@ -1,4 +1,4 @@
-doctype
+doctype html
 html
   head
     title Coder Night
@@ -15,7 +15,7 @@ html
           a.brand href="#{root_path}" Coder Night
           .nav-collapse
             ul.nav
-              / li.active= link_to "Events"
+              li.active= link_to "Events", events_path
               / li= link_to "About"
     .container
       = yield

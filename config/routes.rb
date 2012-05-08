@@ -1,8 +1,11 @@
 CoderNight::Application.routes.draw do
+
   match 'auth/:provider/callback' => 'sessions#create'
   match 'sign_out' => 'sessions#destroy'
 
-  resource :user, only: [:show]
+  resources :events do
+    resources :submissions
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
