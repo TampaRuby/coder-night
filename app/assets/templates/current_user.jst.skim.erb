@@ -1,6 +1,6 @@
 - if @id
   p
-    a#sign-out href="<%= sign_out_path %>" Sign out as #{@name}
+    a#sign-out href="<%= sign_out_path %>" Sign out as #{@full_name}
 - else
   p
     a#sign-in-with-twitter href="/auth/twitter" Sign in with Twitter

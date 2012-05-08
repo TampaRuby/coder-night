@@ -1,2 +1,2 @@
 object @user
-attributes :id, :name, :twitter_nickname
+attributes :id, :full_name, :twitter_handle

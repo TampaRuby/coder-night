@@ -2,9 +2,6 @@ source :rubygems
 
 gem 'rails', '~> 3.2'
 
-# Object Document Mapper
-gem 'mongoid'
-
 # Authentication & Authorization
 gem 'omniauth-twitter'
 
@@ -16,6 +13,9 @@ gem 'backbone-on-rails'
 gem 'skim' # SLIM for client-side JS templates
 gem 'slim'
 gem 'rabl'
+
+# File attachments
+gem 'paperclip'
 
 # Application server
 gem 'thin'
@@ -31,6 +31,7 @@ end
 
 group :development do
   gem 'heroku'
+  gem 'sqlite3'
 end
 
 group :production do
