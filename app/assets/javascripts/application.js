@@ -13,6 +13,7 @@
 //= require jquery
 //= require underscore
 //= require backbone
+//= require skim
 //
 //= require ./coder_night
 //

@@ -8,16 +8,6 @@ gem 'mongoid'
 # Authentication & Authorization
 gem 'omniauth-twitter'
 
-# Client-side JavaScript framworks
-gem 'jquery-rails'
-gem 'backbone-on-rails'
-
-# View templates
-gem 'slim'
-
-# Application server
-gem 'thin'
-
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
@@ -29,6 +19,17 @@ group :assets do
   # CSS framework
   gem 'twitter-bootstrap-rails'
 end
+
+# Client-side JavaScript framworks
+gem 'jquery-rails'
+gem 'backbone-on-rails'
+
+# View templates
+gem 'slim'
+gem 'rabl'
+
+# Application server
+gem 'thin'
 
 group :development do
   gem 'heroku'

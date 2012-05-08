@@ -3,7 +3,14 @@ window.CoderNight =
   Collections: {}
   Views: {}
   Routers: {}
-  init: -> console.log 'Hello from Backbone!'
+  init: ->
+    CoderNight.currentUser = new CoderNight.Models.CurrentUser
+    CoderNight.currentUser.fetch()
+
+    new CoderNight.Views.CurrentUser
+      model: CoderNight.currentUser
+      el: $('#session')
 
 $(document).ready ->
   CoderNight.init()
+
