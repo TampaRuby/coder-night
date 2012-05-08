@@ -25,6 +25,9 @@ group :assets do
 
   # SLIM for client-side JS templates
   gem 'skim'
+
+  # CSS framework
+  gem 'twitter-bootstrap-rails'
 end
 
 group :development do
