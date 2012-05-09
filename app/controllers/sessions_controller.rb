@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   # GET /auth/twitter/callback
   def create
-    session[:user_id] = User.with_omniauth(auth).id
+    session[:user_id] = User.find_or_create_with_omniauth(auth).id
     redirect_to :root
   end
 

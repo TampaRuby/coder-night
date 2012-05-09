@@ -4,11 +4,15 @@ class User < ActiveRecord::Base
 
   attr_accessible :full_name, :twitter_handle
 
-  def self.with_omniauth(auth)
-    user = where(oauth_provider: auth['provider'],
-                      oauth_uid: auth['uid']).first
-    return user if user
+  def self.find_or_create_with_omniauth(auth)
+    find_with_omniauth(auth) || create_with_omniauth(auth)
+  end
 
+  def self.find_with_omniauth(auth)
+    where(oauth_provider: auth['provider'], oauth_uid: auth['uid']).first
+  end
+
+  def self.create_with_omniauth(auth)
     create! do |user|
       user.oauth_provider = auth['provider']
       user.oauth_uid      = auth['uid']
