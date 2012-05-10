@@ -31,6 +31,5 @@ group :development do
 end
 
 group :production do
-  gem 'bson_ext' # C extensions for the MongoDB Ruby driver
   gem 'pg'
 end
