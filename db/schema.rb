@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(:version => 20120508171548) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
-    t.text     "description"
+    t.string   "short_description"
+    t.text     "long_description"
     t.string   "bundle_file_name"
     t.string   "bundle_content_type"
     t.integer  "bundle_file_size"

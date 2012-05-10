@@ -1,0 +1,4 @@
+- flash.each do |type, message|
+  .alert data-alert="alert" class=twitterized_alert(type)
+    a.close data-dismiss="alert" href="#" &times;
+    = message

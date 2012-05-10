@@ -1,17 +1,33 @@
-h1 Listing submissions
+ul.breadcrumb
+  li
+    a href=root_path Home
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=events_path Events
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=parent_path
+      = @event.title
+    span.divider &nbsp;&frasl;&nbsp;
+  li.active
+    a href="#" Submissions
 
-table
-  tr
-    th
-    th
-    th
+.page-header
+  h1 Submissions for &ldquo;#{@event.title}&rdquo;
 
-  - @submissions.each do |submission|
+table.table.table-striped.table-bordered
+  thead
     tr
-      td = link_to 'Show', submission
-      td = link_to 'Edit', edit_submission_path(submission)
-      td = link_to 'Destroy', submission, :confirm => 'Are you sure?', :method => :delete
+      th Identifier
+      th Description
+  tbody
+    - @submissions.each do |submission|
+      tr
+        td= link_to submission.uid, resource_path(submission)
+        td= submission.description
 
-br
+= link_to "#submission-form-modal", class: 'btn btn-primary', data: { toggle: 'modal' } do
+  i.icon-plus-sign.icon-white
+  |  Upload your Submission
 
-= link_to 'New Submission', new_submission_path
+== render 'modal_form'

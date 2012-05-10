@@ -1,0 +1,16 @@
+{
+  "folders":
+  [
+    {
+      "name": "Coder Night",
+      "path": ".",
+      "folder_exclude_patterns": [
+        ".bundle", "doc", "log",
+        "script", "tmp", "vendor"
+      ],
+      "file_exclude_patterns": [
+        "*.sublime-*", "*.sqlite3", "Gemfile.lock"
+      ]
+    }
+  ]
+}

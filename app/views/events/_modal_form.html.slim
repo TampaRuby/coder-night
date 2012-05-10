@@ -1,0 +1,18 @@
+#event-form-modal.modal.fade
+  = simple_form_for @event ||= Event.new, html: { class: 'form-horizontal modal-form' } do |form|
+    .modal-header
+      a.close data-dismiss="modal" href="#" &times;
+      h3
+        - if @event.new_record?
+          'Create a new Coder Night event
+        - else
+          'Edit &ldquo;#{@event.title}&rdquo; Event
+    .modal-body
+      = form.input :title
+      = form.input :short_description
+      = form.input :long_description, input_html: { rows: 6 }
+      = form.input :scheduled_at
+      = form.input :finalized_at
+    .modal-footer
+      button.btn data-dismiss="modal" href="#" Cancel
+      = form.button :submit, class: 'btn-primary'

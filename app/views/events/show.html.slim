@@ -1,18 +1,26 @@
-p#notice = notice
+ul.breadcrumb
+  li
+    a href=root_path Home
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=collection_path Events
+    span.divider &nbsp;&frasl;&nbsp;
+  li.active
+    a href=resource_path
+      = @event.title
 
-p
-  strong Title:
-  = @event.title
-p
-  strong Description:
-  = @event.description
-p
-  strong Scheduled at:
-  = @event.scheduled_at
-p
-  strong Finalized at:
-  = @event.finalized_at
+.page-header
+  h1
+    = @event.title
+    '&nbsp;
+    small= @event.scheduled_at
 
-= link_to 'Edit', edit_event_path(@event)
-'|
-= link_to 'Back', events_path
+= link_to "#event-form-modal", class: 'btn pull-right', data: { toggle: 'modal' } do
+    i.icon-edit
+    '  Edit
+
+= simple_format @event.long_description
+
+= link_to "View Submissions", event_submissions_path(@event), class: 'btn btn-primary'
+
+== render 'modal_form'

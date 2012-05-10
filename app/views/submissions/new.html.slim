@@ -1,5 +1,21 @@
-h1 New submission
+ul.breadcrumb
+  li
+    a href=root_path Home
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=events_path Events
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=parent_path
+      = @event.title
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=collection_path Submissions
+    span.divider &nbsp;&frasl;&nbsp;
+  li.active
+    a href=new_resource_path Upload Submission
+
+.page-header
+  h1 Upload your submission for &ldquo;#{@event.title}&rdquo;
 
 == render 'form'
-
-= link_to 'Back', submissions_path

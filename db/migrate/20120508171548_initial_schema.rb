@@ -13,7 +13,8 @@ class InitialSchema < ActiveRecord::Migration
 
     create_table :events do |t|
       t.string :title
-      t.text :description
+      t.string :short_description
+      t.text :long_description
       t.string :bundle_file_name
       t.string :bundle_content_type
       t.integer :bundle_file_size

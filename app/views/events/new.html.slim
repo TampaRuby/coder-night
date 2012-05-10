@@ -1,5 +1,14 @@
-h1 New event
+ul.breadcrumb
+  li
+    a href=root_path Home
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=collection_path Events
+    span.divider &nbsp;&frasl;&nbsp;
+  li.active
+    a href=new_resource_path New Event
+
+.page-header
+  h1 Create a new Coder Night event
 
 == render 'form'
-
-= link_to 'Back', events_path

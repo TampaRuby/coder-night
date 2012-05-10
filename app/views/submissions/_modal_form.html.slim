@@ -1,0 +1,10 @@
+#submission-form-modal.modal.fade
+  = simple_form_for [@event, @submission ||= Submission.new], html: { class: 'form-horizontal modal-form' } do |form|
+    .modal-header
+      a.close data-dismiss="modal" href="#" &times;
+      h3 Upload your submission for &ldquo;#{@event.title}&rdquo;
+    .modal-body
+      = form.input :archive
+    .modal-footer
+      button.btn data-dismiss="modal" href="#" Cancel
+      = form.button :submit, class: 'btn-primary'

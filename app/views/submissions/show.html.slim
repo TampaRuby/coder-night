@@ -1,6 +1,29 @@
-p#notice = notice
+ul.breadcrumb
+  li
+    a href=root_path Home
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=events_path Events
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=parent_path &ldquo;#{@event.title}&rdquo;
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=collection_path Submissions
+    span.divider &nbsp;&frasl;&nbsp;
+  li.active
+    a href=resource_path
+      = @submission.uid
 
+.page-header
+  h1
+    '&ldquo;#{@submission.uid}&rdquo;
+    small for &ldquo;#{@event.title}&rdquo;
 
-= link_to 'Edit', edit_submission_path(@submission)
-'|
-= link_to 'Back', submissions_path
+= link_to "#submission-form-modal", class: 'btn pull-right', data: { toggle: 'modal' } do
+    i.icon-edit
+    '  Edit
+
+p= @submission.description
+
+== render 'modal_form'

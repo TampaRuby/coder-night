@@ -1,25 +1,30 @@
-h1 Listing events
+ul.breadcrumb
+  li
+    a href=root_path Home
+    span.divider &nbsp;&frasl;&nbsp;
+  li.active
+    a href=collection_path Events
 
-table
-  tr
-    th Title
-    th Description
-    th Scheduled at
-    th Finalized at
-    th
-    th
-    th
+.page-header
+  h1 Coder Nights
 
-  - @events.each do |event|
+table.table.table-striped.table-bordered
+  thead
     tr
-      td = event.title
-      td = event.description
-      td = event.scheduled_at
-      td = event.finalized_at
-      td = link_to 'Show', event
-      td = link_to 'Edit', edit_event_path(event)
-      td = link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
+      th Title
+      th Description
+      th Date
+      th Submissions
+  tbody
+    - @events.each do |event|
+      tr
+        td = link_to event.title, event
+        td = event.short_description
+        td = event.scheduled_at
+        td = event.submissions.count
 
-br
+= link_to "#event-form-modal", class: 'btn btn-primary', data: { toggle: 'modal' } do
+  i.icon-plus-sign.icon-white
+  |  New Event
 
-= link_to 'New Event', new_event_path
+== render 'modal_form'

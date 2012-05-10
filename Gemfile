@@ -5,10 +5,13 @@ gem 'rails', '~> 3.2'
 # Authentication & Authorization
 gem 'omniauth-twitter'
 
+# Abstraction FTW
+gem 'inherited_resources'
+gem 'simple_form'
+
 # Views & client-side js
 gem 'slim-rails'
 gem 'jquery-rails'
-gem 'simple_form'
 
 # File attachments
 gem 'paperclip'

@@ -1,8 +1,14 @@
-h1 Editing event
+ul.breadcrumb
+  li
+    a href=root_path Home
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=collection_path Events
+    span.divider &nbsp;&frasl;&nbsp;
+  li.active
+    a href=resource_path Edit Event
+
+.page-header
+  h1 Edit &ldquo;#{@event.title}&rdquo; Event
 
 == render 'form'
-
-= link_to 'Show', @event
-'|
-= link_to 'Back', events_path
-
