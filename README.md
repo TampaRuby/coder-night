@@ -1,12 +1,12 @@
 # Coder Night
 
-A web application for managing Coder Night events.
+A Rails application for managing Coder Night events.
 
 ## Dependencies
 
-* Ruby 1.9
-* Rails 3.2 (See the Gemfile for other rubygem based dependencies)
-* MongoDB 2.0
+* Ruby 1.9 (See the Gemfile for other rubygem based dependencies)
+* SQLite (development)
+* PostgreSQL (production)
 
 ## Getting Started
 
