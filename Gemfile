@@ -4,6 +4,7 @@ gem 'rails', '~> 3.2'
 
 # Authentication & Authorization
 gem 'omniauth-twitter'
+gem 'cancan'
 
 # Abstraction FTW
 gem 'inherited_resources'

@@ -23,8 +23,9 @@ table.table.table-striped.table-bordered
         td = event.scheduled_at
         td = event.submissions.count
 
-= link_to "#event-form-modal", class: 'btn btn-primary', data: { toggle: 'modal' } do
-  i.icon-plus-sign.icon-white
-  |  New Event
+- if can? :create, Event
+  = link_to "#event-form-modal", class: 'btn btn-primary', data: { toggle: 'modal' } do
+    i.icon-plus-sign.icon-white
+    |  New Event
 
-== render 'modal_form'
+  == render 'modal_form'

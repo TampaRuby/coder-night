@@ -20,4 +20,9 @@ class User < ActiveRecord::Base
       user.twitter_handle = auth['info']['nickname']
     end
   end
+
+  def auto_create_admin
+    self.is_admin = true if User.count.zero?
+  end
+  before_create :auto_create_admin
 end

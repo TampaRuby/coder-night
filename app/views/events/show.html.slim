@@ -15,12 +15,13 @@ ul.breadcrumb
     '&nbsp;
     small= @event.scheduled_at
 
-= link_to "#event-form-modal", class: 'btn pull-right', data: { toggle: 'modal' } do
-    i.icon-edit
-    '  Edit
+- if can? :edit, @event
+  = link_to "#event-form-modal", class: 'btn pull-right', data: { toggle: 'modal' } do
+      i.icon-edit
+      '  Edit
+
+  == render 'modal_form'
 
 = simple_format @event.long_description
 
-= link_to "View Submissions", event_submissions_path(@event), class: 'btn btn-primary'
-
-== render 'modal_form'
+= link_to "View Your Submissions", event_submissions_path(@event), class: 'btn btn-primary'

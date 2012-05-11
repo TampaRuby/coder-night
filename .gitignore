@@ -15,4 +15,7 @@
 /tmp
 
 /config/env.yml
+/public/system/*
 *.sublime-workspace
+
+

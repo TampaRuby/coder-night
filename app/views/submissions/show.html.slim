@@ -20,10 +20,11 @@ ul.breadcrumb
     '&ldquo;#{@submission.uid}&rdquo;
     small for &ldquo;#{@event.title}&rdquo;
 
-= link_to "#submission-form-modal", class: 'btn pull-right', data: { toggle: 'modal' } do
-    i.icon-edit
-    '  Edit
+- if can? :edit, @submission
+  = link_to "#submission-form-modal", class: 'btn pull-right', data: { toggle: 'modal' } do
+      i.icon-edit
+      '  Edit
+
+  == render 'modal_form'
 
 p= @submission.description
-
-== render 'modal_form'

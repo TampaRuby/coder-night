@@ -15,7 +15,8 @@ html
           a.brand href="#{root_path}" Coder Night
           .nav-collapse
             ul.nav
-              li.active= link_to "Events", events_path
+              li class=('active' if request.path =~ /^\/events/)
+                = link_to "Events", events_path
               / li= link_to "About"
     .container
       == render partial: 'shared/flashes'

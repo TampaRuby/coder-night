@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20120508171548) do
     t.string   "title"
     t.string   "short_description"
     t.text     "long_description"
+    t.boolean  "is_finalized"
     t.string   "bundle_file_name"
     t.string   "bundle_content_type"
     t.integer  "bundle_file_size"
