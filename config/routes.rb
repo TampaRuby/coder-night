@@ -4,6 +4,7 @@ CoderNight::Application.routes.draw do
   match 'sign_out' => 'sessions#destroy'
 
   resources :events do
+    get 'roster', on: :member
     resources :submissions
   end
 

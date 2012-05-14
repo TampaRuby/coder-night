@@ -6,8 +6,7 @@ ul.breadcrumb
     a href=events_path Events
     span.divider &nbsp;&frasl;&nbsp;
   li
-    a href=parent_path
-      = @event.title
+    a href=parent_path &ldquo;#{@event.title}&rdquo;
     span.divider &nbsp;&frasl;&nbsp;
   li.active
     a href="#" Submissions
@@ -19,12 +18,12 @@ table.table.table-striped.table-bordered
   thead
     tr
       th Identifier
-      th Description
+      th Uploaded
   tbody
     - @submissions.each do |submission|
       tr
         td= link_to submission.uid, resource_path(submission)
-        td= submission.description
+        td= submission.archive_updated_at.try(:to_s, :long_ordinal)
 
 - if can? :create, Submission
   = link_to "#submission-form-modal", class: 'btn btn-primary', data: { toggle: 'modal' } do

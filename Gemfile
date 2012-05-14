@@ -20,6 +20,8 @@ gem 'paperclip'
 # Application server
 gem 'thin'
 
+gem 'random-word'
+
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'

@@ -6,8 +6,7 @@ ul.breadcrumb
     a href=events_path Events
     span.divider &nbsp;&frasl;&nbsp;
   li
-    a href=parent_path
-      = @event.title
+    a href=parent_path &ldquo;#{@event.title}&rdquo;
     span.divider &nbsp;&frasl;&nbsp;
   li
     a href=collection_path Submissions

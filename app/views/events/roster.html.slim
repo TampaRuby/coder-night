@@ -1,0 +1,33 @@
+ul.breadcrumb
+  li
+    a href=root_path Home
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=collection_path Events
+    span.divider &nbsp;&frasl;&nbsp;
+  li
+    a href=resource_path
+      = @event.title
+    span.divider &nbsp;&frasl;&nbsp;
+  li.active= link_to "Roster", roster_resource_path
+
+.page-header
+  h1
+    = @event.title
+    '&nbsp;
+    small Roster
+
+table.table.table-striped.table-bordered
+  thead
+    tr
+      th Name
+      th Twitter
+  tbody
+    - @event.users.each do |user|
+      tr
+        td = user.full_name
+        td = user.twitter_handle
+
+= debug @event
+= debug @event.users
+= debug @event.submissions

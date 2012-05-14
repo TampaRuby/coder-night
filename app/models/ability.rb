@@ -32,8 +32,8 @@ class Ability
     else
       # Logged-in Users
       if !user.new_record?
-        # Can manage their own submissions, to events that haven't been finalized.
-        can :manage, Submission, user_id: user.id, event: { is_finalized: false }
+        # Can manage their own submissions
+        can :manage, Submission, user_id: user.id
       end
       # Guest
       can :read, Event
