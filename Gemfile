@@ -28,6 +28,10 @@ group :assets do
   gem 'uglifier'
 end
 
+group :test, :development do
+  gem 'rspec-rails'
+end
+
 group :development do
   gem 'heroku'
   gem 'sqlite3'

@@ -4,6 +4,14 @@ class User < ActiveRecord::Base
 
   attr_accessible :full_name, :twitter_handle
 
+  before_create :auto_create_admin
+
+  def auto_create_admin
+    if User.count.zero? && Rails.env.development?
+      self.is_admin = true
+    end
+  end
+
   def self.find_or_create_with_omniauth(auth)
     find_with_omniauth(auth) || create_with_omniauth(auth)
   end
@@ -20,9 +28,4 @@ class User < ActiveRecord::Base
       user.twitter_handle = auth['info']['nickname']
     end
   end
-
-  def auto_create_admin
-    self.is_admin = true if User.count.zero?
-  end
-  before_create :auto_create_admin
 end
