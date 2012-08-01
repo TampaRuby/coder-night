@@ -22,6 +22,8 @@ gem 'thin'
 
 gem 'random-word'
 
+gem 'newrelic_rpm'
+
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'

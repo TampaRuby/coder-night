@@ -72,6 +72,7 @@ GEM
     mime-types (1.18)
     multi_json (1.0.4)
     netrc (0.7.1)
+    newrelic_rpm (3.4.1)
     oauth (0.4.6)
     omniauth (1.1.0)
       hashie (~> 1.2)
@@ -178,6 +179,7 @@ DEPENDENCIES
   heroku
   inherited_resources
   jquery-rails
+  newrelic_rpm
   omniauth-twitter
   paperclip
   pg
